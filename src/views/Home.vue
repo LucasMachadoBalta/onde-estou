@@ -8,8 +8,8 @@
     <ion-content>
       <div class='container'>
         <h2>Coordenadas</h2>
-        <h3>--LAT--</h3>   
-        <h3>--LONG</h3>   
+        <h3>{{ lat }}</h3>   
+        <h3>{{ lon }}</h3>   
       </div>
     </ion-content>
   </ion-page>
@@ -18,7 +18,7 @@
 <script lang="ts">
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 import { defineComponent } from 'vue';
-
+import { Geolocation } from '@capacitor/geolocation';
 export default defineComponent({
   name: 'Home',
   components: {
@@ -27,6 +27,12 @@ export default defineComponent({
     IonPage,
     IonTitle,
     IonToolbar
+  },
+  data() {
+    return {
+      lat:0,
+      lon:0
+    }
   }
 });
 </script>
