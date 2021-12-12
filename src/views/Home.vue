@@ -59,7 +59,7 @@ export default defineComponent({
       };
       const response = await Http.get(options);
       console.log('resposta recebida: ', response);
-      this.cidade = response.data.data[0].locality;
+      this.cidade = response.data.data[0].locality + ', ' + response.data.data[0].region_code;
     }
     
   }
